@@ -2,16 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Hyper - Responsive Bootstrap 4 Admin Dashboard</title>
+        <title>Wilkie - Client</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
 
+        <!-- third party css -->
+        <link href="assets/css/vendor/dataTables.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/vendor/responsive.bootstrap4.css" rel="stylesheet" type="text/css" />
+        <!-- third party css end -->
+
         <!-- App css -->
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+
 
     </head>
 
@@ -48,7 +54,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
+                            <a href="clients.html" class="side-nav-link">
                                 <i class="dripicons-view-apps"></i>
                                 <span> Clients </span>
                             </a>
@@ -56,7 +62,15 @@
                         </li>
             
                         <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
+                            <a href="client-attorneys.html" class="side-nav-link">
+                                <i class="dripicons-copy"></i>
+                                <span> Client Attorneys </span>
+                            </a>
+                
+                        </li>
+
+                        <li class="side-nav-item">
+                            <a href="lead-attorneys.html" class="side-nav-link">
                                 <i class="dripicons-copy"></i>
                                 <span> Lead Attorneys </span>
                             </a>
@@ -64,7 +78,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
+                            <a href="matters.html" class="side-nav-link">
                                 <i class="dripicons-browser"></i>
                                 <span> Matters </span>
                             </a>
@@ -73,7 +87,7 @@
 
 
                         <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
+                            <a href="invoices.html" class="side-nav-link">
                                 <i class="dripicons-briefcase"></i>
                                 <span> Invoices </span>
                                 <span class="menu-arrow"></span>
@@ -87,7 +101,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="javascript: void(0);" class="side-nav-link">
+                            <a href="payments.html" class="side-nav-link">
                                 <i class="dripicons-document"></i>
                                 <span> Payments </span>
                                 <span class="menu-arrow"></span>
@@ -267,16 +281,77 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Hyper</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
-                                            <li class="breadcrumb-item active">Starter</li>
+                                            <li class="breadcrumb-item"><a href="index.html">Willkie</a></li>
+                                            <li class="breadcrumb-item active">Clients</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Starter</h4>
+                                    <h4 class="page-title">Clients
+                                         <a href="javascript:void(0);" class="btn btn-success mb-2 ml-3"><i class="mdi mdi-plus-circle mr-2"></i>Add a new Client</a>
+                                    </h4>
                                 </div>
                             </div>
                         </div>     
                         <!-- end page title --> 
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body" id="clientTable">
+                                        <div class="row">
+                                                <div class="col-lg-2">
+                                                    <div class="card widget-flat border border-secondary text-center">
+                                                        <div class="card-body">
+                                                            <h6 class="font-weight-normal text-muted mt-0" title="Clients">Clients</h6>
+                                                            <h4 class="mt-1 mb-0">49</h4>
+                                                        </div> <!-- end card-body-->
+                                                    </div> <!-- end card-->
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="card widget-flat border border-secondary text-center">
+                                                        <div class="card-body">
+                                                            <h6 class="font-weight-normal text-muted mt-0" title="Clients">Open Invoices</h6>
+                                                            <h4 class="mt-1 mb-0">$2,221,894</h4>
+                                                        </div> <!-- end card-body-->
+                                                    </div> <!-- end card-->
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="card widget-flat border border-secondary text-center">
+                                                        <div class="card-body">
+                                                            <h6 class="font-weight-normal text-muted mt-0" title="Clients">Billable Hours</h6>
+                                                            <h4 class="mt-1 mb-0">27251</h4>
+                                                        </div> <!-- end card-body-->
+                                                    </div> <!-- end card-->
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="card widget-flat border border-secondary text-center">
+                                                        <div class="card-body">
+                                                            <h6 class="font-weight-normal text-muted mt-0" title="Clients">Total Collected</h6>
+                                                            <h4 class="mt-1 mb-0">$252,960</h4>
+                                                        </div> <!-- end card-body-->
+                                                    </div> <!-- end card-->
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="card widget-flat border border-secondary text-center">
+                                                        <div class="card-body">
+                                                            <h6 class="font-weight-normal text-muted mt-0" title="Clients">Unbilled Inventory</h6>
+                                                            <h4 class="mt-1 mb-0">$1,893,230</h4>
+                                                        </div> <!-- end card-body-->
+                                                    </div> <!-- end card-->
+                                                </div>
+                                                <div class="col-lg-2">
+                                                    <div class="card widget-flat border border-secondary text-center">
+                                                        <div class="card-body">
+                                                            <h6 class="font-weight-normal text-muted mt-0" title="Clients">Unpaid Inventory</h6>
+                                                            <h4 class="mt-1 mb-0">$2,809,132</h4>
+                                                        </div> <!-- end card-body-->
+                                                    </div> <!-- end card-->
+                                                </div>
+                                        </div>
+                                    </div> <!-- end card-body-->
+                                </div> <!-- end card-->
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
                         
                     </div> <!-- container -->
 
@@ -437,5 +512,26 @@
 
         <!-- App js -->
         <script src="assets/js/app.min.js"></script>
+
+        <!-- third party js -->
+        <script src="assets/js/vendor/jquery.dataTables.min.js"></script>
+        <script src="assets/js/vendor/dataTables.bootstrap4.js"></script>
+        <script src="assets/js/vendor/dataTables.responsive.min.js"></script>
+        <script src="assets/js/vendor/responsive.bootstrap4.min.js"></script>
+        <script src="assets/js/vendor/dataTables.buttons.min.js"></script>
+        <script src="assets/js/vendor/buttons.bootstrap4.min.js"></script>
+        <script src="assets/js/vendor/buttons.html5.min.js"></script>
+        <script src="assets/js/vendor/buttons.flash.min.js"></script>
+        <script src="assets/js/vendor/buttons.print.min.js"></script>
+        <script src="assets/js/vendor/dataTables.keyTable.min.js"></script>
+        <script src="assets/js/vendor/dataTables.select.min.js"></script>
+        <!-- third party js ends -->
+
+        <!-- demo app -->
+        <script src="assets/js/pages/demo.datatable-init.js"></script>
+        <!-- end demo js-->
+        <script type='text/javascript' src='assets/js/vendor/jsonImport.js'></script>
+
+
     </body>
 </html>

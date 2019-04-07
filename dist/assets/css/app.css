@@ -11903,10 +11903,6 @@ table.dataTable {
       border-color: #ea6307; }
   table.dataTable tbody td:focus {
     outline: none !important; }
-  table.dataTable tbody th.focus, table.dataTable tbody td.focus {
-    outline: 2px solid #ea6307 !important;
-    outline-offset: -1px;
-    background-color: rgba(234, 99, 7, 0.15); }
 
 .dataTables_info {
   font-weight: 600; }
